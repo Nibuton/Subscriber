@@ -1,6 +1,7 @@
 package com.nibuton.intech.subscriber.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -23,14 +24,18 @@ public class MessageServiceImpl implements MessageService{
 	}
 	
 	@Override
-	public void saveMessage(Message message) {
+	public Message saveMessage(Message message) {
+		
+		Message answer = null;
 		
 		if (message instanceof Purchase) {
-			purchaseJpaRepository.save((Purchase) message);
+			answer = purchaseJpaRepository.save((Purchase) message);
+			
 		}
 		else if (message instanceof Subscription) {
-			subscriptionJpaRepository.save((Subscription) message);
+			answer = subscriptionJpaRepository.save((Subscription) message);
 		}
+		return answer;
 	}
 
 }

@@ -24,5 +24,4 @@ public class SubscriberConfig{
 	    return args -> {
 	    };
 	  }
-
 }
