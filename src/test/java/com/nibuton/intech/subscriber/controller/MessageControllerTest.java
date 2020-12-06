@@ -10,8 +10,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import com.nibuton.intech.subscriber.repo.PurchaseJpaRepository;
-import com.nibuton.intech.subscriber.repo.SubscriptionJpaRepository;
 import com.nibuton.intech.subscriber.service.MessageService;
 
 @WebMvcTest

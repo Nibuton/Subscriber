@@ -1,7 +1,5 @@
 package com.nibuton.intech.subscriber.exception;
 
-import org.springframework.http.HttpStatus;
-
 public class ExceptionResponse {
 	
 	private int status;

@@ -1,10 +1,8 @@
 package com.nibuton.intech.subscriber.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.nibuton.intech.subscriber.entity.Message;
 import com.nibuton.intech.subscriber.entity.Purchase;
 import com.nibuton.intech.subscriber.entity.Subscription;
