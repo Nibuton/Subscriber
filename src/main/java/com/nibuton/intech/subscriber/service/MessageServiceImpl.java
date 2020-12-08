@@ -1,5 +1,7 @@
 package com.nibuton.intech.subscriber.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,8 @@ public class MessageServiceImpl implements MessageService{
 	PurchaseJpaRepository purchaseJpaRepository;
 	SubscriptionJpaRepository subscriptionJpaRepository;
 	
+	Logger logger = LoggerFactory.getLogger(MessageServiceImpl.class);
+	
 	@Autowired
 	public MessageServiceImpl(PurchaseJpaRepository purchaseJpaRepository, SubscriptionJpaRepository subscriptionJpaRepository) {
 		this.purchaseJpaRepository = purchaseJpaRepository;
@@ -38,6 +42,8 @@ public class MessageServiceImpl implements MessageService{
 		
 		Message answer = null;
 		
+		logger.debug("Trying to save " + message);
+		
 		if (message instanceof Purchase) {
 			answer = purchaseJpaRepository.save((Purchase) message);
 			
@@ -45,6 +51,9 @@ public class MessageServiceImpl implements MessageService{
 		else if (message instanceof Subscription) {
 			answer = subscriptionJpaRepository.save((Subscription) message);
 		}
+		
+		logger.info("Saved " + message + " to a database");
+		
 		return answer;
 	}
 
