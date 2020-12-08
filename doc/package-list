@@ -1,0 +1,7 @@
+com.nibuton.intech.subscriber
+com.nibuton.intech.subscriber.config
+com.nibuton.intech.subscriber.controller
+com.nibuton.intech.subscriber.entity
+com.nibuton.intech.subscriber.exception
+com.nibuton.intech.subscriber.repo
+com.nibuton.intech.subscriber.service

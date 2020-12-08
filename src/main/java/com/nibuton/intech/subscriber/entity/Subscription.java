@@ -5,6 +5,11 @@ import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+/**
+ * Класс для SUBSCRIPTION сообщений
+ * @author nibuton
+ *
+ */
 @Entity
 @Table(name = "subscription")
 public class Subscription extends Message {

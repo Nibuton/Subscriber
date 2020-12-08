@@ -9,9 +9,17 @@ import com.nibuton.intech.subscriber.entity.Subscription;
 import com.nibuton.intech.subscriber.repo.PurchaseJpaRepository;
 import com.nibuton.intech.subscriber.repo.SubscriptionJpaRepository;
 
+/**
+ * Сервис, содержащий логику опредления типа сообщения и его обработки
+ * @author nibuton
+ *
+ */
 @Service
 public class MessageServiceImpl implements MessageService{
 	
+	/**
+	 * Репозитории для сохранения соответствующих сущностей
+	 */
 	PurchaseJpaRepository purchaseJpaRepository;
 	SubscriptionJpaRepository subscriptionJpaRepository;
 	
@@ -21,6 +29,10 @@ public class MessageServiceImpl implements MessageService{
 		this.subscriptionJpaRepository = subscriptionJpaRepository;
 	}
 	
+	/**
+	 * @param message Сообщение для сохранения
+	 * @return Сообщение сохраненное в БД
+	 */
 	@Override
 	public Message saveMessage(Message message) {
 		

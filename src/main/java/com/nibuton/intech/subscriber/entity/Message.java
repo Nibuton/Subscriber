@@ -16,6 +16,12 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.sun.istack.NotNull;
 
+/**
+ * Абстрактный класс, содержащий всю логику сущности сообщения. Создан, чтобы не дублировать код отдельно 
+ * для PURCHASE и SUBSCRIPTION сообщений
+ * @author nibuton
+ *
+ */
 @MappedSuperclass
 @JsonTypeInfo(
 		  use = JsonTypeInfo.Id.NAME,
