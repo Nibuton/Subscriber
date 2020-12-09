@@ -11,6 +11,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -37,12 +38,13 @@ public abstract class Message{
 	@Id
 	@Min(0)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonProperty(value = "database_id")
 	@Column(name = "id")
 	private int id;
 	
 	@NotNull
 	@Min(0)
-	@JsonProperty(value = "id")
+	@JsonAlias({"message_id", "id"})
 	@Column(name = "message_id")
 	private int messageId;
 	
@@ -72,11 +74,9 @@ public abstract class Message{
 		this.action= action;
 	}
 
-
 	public int getMessageId() {
 		return messageId;
 	}
-
 
 	public void setMessageId(int messageId) {
 		this.messageId = messageId;
@@ -86,7 +86,6 @@ public abstract class Message{
 	public int getMsisdn() {
 		return msisdn;
 	}
-
 
 	public void setMsisdn(int msisdn) {
 		this.msisdn = msisdn;

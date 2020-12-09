@@ -47,7 +47,7 @@ public class MessageController {
 		Message answer = messageService.saveMessage(message);
 		ResponseEntity<Message> response = new ResponseEntity<Message>(answer,HttpStatus.OK);
 		logger.info(response.toString());
-		return response;
+		return new ResponseEntity<Message>(answer,HttpStatus.OK);
 	}
 	
 	
